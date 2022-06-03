@@ -1,0 +1,218 @@
+/* TO GET AN IDEA OF THE CSS YOU WILL LIKELY BE USING, SEE THE LISTS BELOW. */
+
+        /* 
+        
+        Spacing 
+
+            - padding (shorthand and/or specific properties like padding-bottom, etc.)
+
+            - margin, (shorthand and/or specific properties like margin-top, etc.)
+
+            - letter-spacing, word-spacing, line-height
+
+            - width, max-width, min-width
+            - height, max-height, min-height
+
+        Typography 
+
+            - font-family, font-size, font-style, font-weight
+
+            - text-decoration, text-align
+
+            - color
+
+            - text-shadow, text-transform
+
+        Box, Layout and Border 
+
+            - border (shorthand and/or specific properties like border-top, border-bottom-radius, border-width, etc.)
+
+            - box-shadow
+
+            - display, float, align-items, align-content
+
+            - grid-template-columns, grid-column-gap
+
+            - transform
+
+        Other
+
+            - :nth()-child (to target specific child elements)
+
+            - :focus, :hover, :active (to target link states)
+
+            - @font-face or @import (to import typefaces)
+
+        */
+
+
+/* ------ START WRITING YOUR CODE BELOW ------ */
+
+/*general*/
+html {max-width:1300px;
+    margin: 0 auto;
+    padding: 0;
+    font-family: "Lato", sans-serif;
+    font-size:1rem;
+    color: black;
+}
+
+@font-face {font-family: "Lato";
+    src: url(../fonts/sans-serif/lato-regular.ttf);}
+
+@font-face {font-family: "Ultra";
+src: url(../fonts/serif/ultra-regular.ttf);}    
+
+/* header style - has H1*/
+header > h1 {text-align: center;
+    transform: rotate(2deg);
+    font-size: 3.5rem;
+    text-shadow: .2rem .2rem .2rem  #A9A9A9;}
+.highlight {
+    padding:.625rem;
+    color: #FFF;
+    font-family:  "Ultra", serif;
+    text-transform: uppercase;
+    text-shadow: .2rem .2rem .2rem  black;
+    font-weight: 300;
+    background: linear-gradient(to right, #0F2852, #2f81b2 25%, #0F2852);
+    border-radius: 15px 0 15px 0;
+    box-shadow: .2rem .2rem .2rem  #A9A9A9;}
+
+/*nav style - has UL and IL */
+nav {
+    max-width: 100%;
+    border: 0.15rem solid black;
+    border-left: none;
+    border-right: none;
+    border-color: black;
+    min-height: 4rem;}
+nav > ul {
+    list-style-type: none;
+    margin: 0;
+    padding-top: 0.15rem;
+    padding-left: 2rem;  }
+nav > ul > li {
+    float: left;
+    max-width: 5rem;
+    padding: 1rem 3rem 1rem 1rem;}
+nav > ul > li > a {
+    float: left;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #0F2852;}
+nav > ul > li > a:link {
+    color: #0F2852;
+    text-decoration: none;}
+nav > ul > li > a:visited {
+    color: #0F2852;
+    text-decoration: none;}
+nav > ul > li > a:hover {
+    color: black;
+    text-transform: uppercase;
+    transform: rotate(-5deg);
+    text-decoration:line-through;
+transition-duration:0.3s;}
+nav > ul > li > a:active {
+    color: #276AAB;
+    text-decoration: none;}
+
+/*Main - includes H2, .main-section, .article-image, .subsection, .article-image, .favorite-styled (button)*/
+main {padding-left: 3rem;}
+main > section {Margin-top: 3rem;}
+main > section > article > h3 {font-size: 1.6rem;}
+main > section > article > h2 {font-size:2rem;}
+main > section > article > p {font-size: 1.4rem;}
+main > section > article {max-width:65%;
+    /*Margin-top:3rem;*/
+    float:left;
+    padding-right:1rem;
+    font-size: 1.3rem;
+    /*border-right: 0.15rem solid black;*/}
+.subsection {display: grid;
+    grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr; 
+    margin-top:2rem;
+    background:#eeeede;
+    padding:.5rem;
+    grid-gap: .5rem;}
+.subsection img {width:100%;
+}
+.article-image {float: left;
+        margin: 0 0 -6px 0;
+        padding: 0 1rem 0 0;
+        }
+     
+time {font-style:italic;
+font-size:.8rem;}
+button {margin: 2rem 0 1rem 0;
+    float: left;
+    padding: 1rem;
+    border: 0;
+    width: 12rem;
+    border-radius: 10px;
+    box-shadow: .2rem .2rem .2rem  #A9A9A9;
+    background: linear-gradient(to right, #0F2852, #2f81b2 25%, #0F2852);
+    font-size: 1.3rem;
+    font-family:  "Lato", serif;
+    color: #FFF;
+    font-weight: 700;
+    }
+button:hover {
+    transform: rotate(-5deg);
+    text-decoration:line-through;
+    transition-duration:0.3s;}
+
+/*figcaption {font-size: .75rem;
+    background-color: #eeeede;
+        padding: 0.5rem;}*/
+
+
+.expand {text-decoration: none;
+    font-size:.4rem;
+    letter-spacing: .3rem;
+}
+
+aside {
+    Margin-right: 1rem;
+    /*margin-left: -1rem;*/
+    max-width: 25%;
+    float: left;
+    line-height: 1.5rem;
+    border-left: 0.1rem solid black;
+    padding: 0 2.5rem 0 1.5rem;
+    font-size: 1rem;}
+/*aside > img {width: 100%;}*/
+aside > p {border-bottom: 0.1rem solid #333;
+          padding-bottom: .5rem;}
+
+/* Footer Styles */
+/*footer
+The last item to receive styling will be the footer of the page*/
+
+footer > p {
+    font-size: .7rem;
+    font-weight: 300;
+    padding: 3rem;    
+}
+footer a {font-style:italic;
+         font-size:1.5rem;}
+footer p:nth-child(1) {
+    float: left;
+/*background-color: red;*/}
+footer p:nth-child(2) {
+    float: right;
+    text-align: right;
+/*background-color:green*/}
+footer > p > a {
+    font-size: 0.7rem;
+    text-decoration: none;
+    color: black;}
+footer > p > a:link {
+    color: black;}
+footer > p > a:visited {
+    color: #1a499b;}
+footer > p > a:hover {
+    text-decoration: underline;
+    color: #0F2852;}
+footer > p > a:active {
+    color: black;}
